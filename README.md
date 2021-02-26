@@ -44,3 +44,15 @@ docker commit -m "ha with configurator" -a "radaig_ha" ab14e77960c1 radaig/homea
 创建成功后会返回这个镜像的 ID 信息。
 ```
 
+## 使用方法
+```
+docker run -d \
+    --name="Home-Assistant" \
+    --restart unless-stopped --privileged \
+    -v /opt/hass:/config \
+    -p 8123:8123 -p 8124:8124
+    --hostname="HA" \
+    -e TZ=Asia/Shanghai \
+    radaig/homeassistant
+```
+
