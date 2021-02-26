@@ -33,3 +33,14 @@ panel_iframe:
     url: 'http://192.168.100.200:8124'
     icon: mdi:wrench
 ```
+
+## 提交容器
+```
+docker ps #查看之前的容器ID
+docker commit -m "ha with configurator" -a "radaig_ha" ab14e77960c1 radaig/homeassistant
+-m 来指定提交的说明信息，跟我们使用的版本控制工具一样；
+-a 可以指定更新的用户信息；之后是用来创建镜像的容器的 ID；
+最后指定目标镜像的仓库名和 tag 信息。
+创建成功后会返回这个镜像的 ID 信息。
+```
+
